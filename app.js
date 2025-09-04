@@ -95,3 +95,18 @@ function addToCart(id) {
     localStorage.setItem("cart", JSON.stringify(cart));
     renderCart();
   }
+  // Filtros y búsqueda
+searchInput.addEventListener("input", () => {
+  filterAndSort();
+});
+
+filterCategory.addEventListener("change", () => {
+  filterAndSort();
+});
+
+sortProducts.addEventListener("change", () => {
+  filterAndSort();
+});
+
+function filterAndSort() {
+  let filtered = [...products];
