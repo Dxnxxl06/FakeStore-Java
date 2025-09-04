@@ -38,3 +38,14 @@ function renderProducts(productList) {
       productsContainer.appendChild(card);
     });
   }
+
+  // Render categorías
+function loadCategories() {
+    const categories = [...new Set(products.map(p => p.category))];
+    categories.forEach(cat => {
+      const option = document.createElement("option");
+      option.value = cat;
+      option.textContent = cat;
+      filterCategory.appendChild(option);
+    });
+  }
