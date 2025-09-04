@@ -120,3 +120,8 @@ function filterAndSort() {
        p.description.toLowerCase().includes(search)
      );
    }
+
+   // Filtro categoría
+  if (filterCategory.value) {
+    filtered = filtered.filter(p => p.category === filterCategory.value);
+  }
