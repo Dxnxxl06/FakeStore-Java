@@ -1,4 +1,4 @@
-* Estilos generales para index.html */
+/* Estilos generales para index.html */
 body {
   font-family: "Inria Sans", sans-serif;
   font-weight: 400;
@@ -92,7 +92,7 @@ main {
   }
   
   .product-card button {
-    background-color: #4CAF50;
+    background-color: #444644;
     color: white;
     border: none;
     padding: 10px 15px;
