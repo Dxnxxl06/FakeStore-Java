@@ -110,3 +110,13 @@ sortProducts.addEventListener("change", () => {
 
 function filterAndSort() {
   let filtered = [...products];
+}
+
+   // Buscar
+   const search = searchInput.value.toLowerCase();
+   if (search) {
+     filtered = filtered.filter(p =>
+       p.title.toLowerCase().includes(search) ||
+       p.description.toLowerCase().includes(search)
+     );
+   }
