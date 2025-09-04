@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAKESTORE</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inria+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1 class="title">FAKESTORE</h1>
+    <h1 class="copyrigth"></h1>
+    <input type="text" id="searchInput" placeholder="Buscar productos...">
+    <select id="filterCategory">
+      <option value="">Todas las categorías</option>
+    </select>
+    <select id="sortProducts">
+      <option value="" class="bttn">Ordenar por...</option>
+      <option value="priceAsc" class="bttn">Precio: Menor a mayor</option>
+      <option value="priceDesc" class="bttn">Precio: Mayor a menor</option>
+      <option value="nameAsc" class="bttn">Nombre: A-Z</option>
+      <option value="nameDesc" class="bttn">Nombre: Z-A</option>
+    </select>
+  </header>
+
+  <main>
+    <section id="productsContainer"></section>
+    <aside id="cart" style="background-color: rgb(0, 0, 0); border-color: black ;">
+      <h2 style="color: #bcbcbc;">Carrito</h2>
+      <ul id="cartItems" style=""></ul>
+      <p style="background-color: rgb(255, 255, 255); border-radius: 5px; padding: 5px; color: #4a4a4a;">Total: $<span id="cartTotal">0</span></p>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
