@@ -49,3 +49,49 @@ function loadCategories() {
       filterCategory.appendChild(option);
     });
   }
+
+  // Carrito
+function addToCart(id) {
+    const item = products.find(p => p.id === id);
+    const existing = cart.find(p => p.id === id);
+    if (existing) {
+      existing.quantity++;
+    } else {
+      cart.push({ ...item, quantity: 1 });
+    }
+    updateCart();
+  }
+  
+  function removeFromCart(id) {
+    cart = cart.filter(p => p.id !== id);
+    updateCart();
+  }
+  
+  function renderCart() {
+    cartItems.innerHTML = "";
+    let total = 0;
+    cart.forEach(item => {
+      total += item.price * item.quantity;
+      const li = document.createElement("li");
+      li.innerHTML = `
+        ${item.title} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}
+        <button onclick="removeFromCart(${item.id})">Delete</button>
+      `;
+      const button = li.querySelector("button");
+      button.style.marginBottom = "20px";
+      button.style.backgroundColor = "#BCBCBC";
+      cartItems.appendChild(li);
+    });
+    cartTotal.textContent = total.toFixed(2);
+  
+  
+    const baseHeight = 50; 
+    const itemHeight = 50; 
+    const cartHeight = baseHeight + (cart.length * itemHeight);
+    cartItems.style.height = `${cartHeight}px`;
+  }
+  
+  function updateCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+  }
