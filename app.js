@@ -110,7 +110,7 @@ sortProducts.addEventListener("change", () => {
 
 function filterAndSort() {
   let filtered = [...products];
-}
+
 
    // Buscar
    const search = searchInput.value.toLowerCase();
@@ -125,3 +125,17 @@ function filterAndSort() {
   if (filterCategory.value) {
     filtered = filtered.filter(p => p.category === filterCategory.value);
   }
+
+   // Orden
+   if (sortProducts.value === "priceAsc") {
+    filtered.sort((a, b) => a.price - b.price);
+  } else if (sortProducts.value === "priceDesc") {
+    filtered.sort((a, b) => b.price - a.price);
+  } else if (sortProducts.value === "nameAsc") {
+    filtered.sort((a, b) => a.title.localeCompare(b.title));
+  } else if (sortProducts.value === "nameDesc") {
+    filtered.sort((a, b) => b.title.localeCompare(a.title));
+  }
+
+  renderProducts(filtered);
+}
