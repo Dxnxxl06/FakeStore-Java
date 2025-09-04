@@ -139,3 +139,6 @@ function filterAndSort() {
 
   renderProducts(filtered);
 }
+
+// Inicializar
+fetchProducts();
