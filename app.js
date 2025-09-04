@@ -21,3 +21,20 @@ async function fetchProducts() {
       console.error("Error al cargar productos:", error);
     }
   }
+
+  // Render de productos
+function renderProducts(productList) {
+    productsContainer.innerHTML = "";
+    productList.forEach(prod => {
+      const card = document.createElement("div");
+      card.classList.add("product-card");
+      card.innerHTML = `
+        <img src="${prod.image}" alt="${prod.title}">
+        <h3>${prod.title}</h3>
+        <p>${prod.category}</p>
+        <p><strong>$${prod.price.toFixed(2)}</strong></p>
+        <button onclick="addToCart(${prod.id})">Agregar al carrito</button>
+      `;
+      productsContainer.appendChild(card);
+    });
+  }
