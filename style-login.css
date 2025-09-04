@@ -1,0 +1,146 @@
+/* Estilos para incio_sesion.html */
+body {
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  color: #bcbcbc;
+  padding: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.div-2 {
+  margin-top: 100px; /* Ajustado para mejor centrado */
+  font-size: x-large;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px; /* Mejorado: Limite de ancho */
+}
+
+.div-2 .input-int {
+  display: grid;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.div-2 .inp1,
+.div-2 .inp2 {
+  margin-bottom: 20px; /* Reducido para mejor espaciado */
+  border-radius: 15px;
+  height: 45px;
+  border: 1px solid #444; /* Mejorado: Borde sutil */
+  font-size: medium;
+  text-align: center;
+  background-color: #1e1e1e; /* Mejorado: Fondo oscuro */
+  color: #ffffff; /* Mejorado: Texto blanco */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login {
+  margin: 40px 0; /* Ajustado para mejor espaciado */
+  font-size: 2rem; /* Mejorado: Tamaño más prominente */
+  color: #ffffff; /* Mejorado: Blanco para contraste */
+}
+
+p {
+  margin-top: 20px;
+  font-size: medium;
+  color: #bcbcbc;
+  text-align: center;
+}
+
+p a {
+  color: #FF7171;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline; /* Mejorado: Efecto hover */
+}
+
+a button {
+  border: none;
+  border-radius: 50px; /* Mejorado: Más redondeado */
+  height: 45px;
+  width: 100%;
+  max-width: 300px; /* Mejorado: Ancho limitado */
+  font-size: large;
+  color: #ffffff; /* Mejorado: Texto blanco */
+  background-color: #4CAF50; /* Mejorado: Color verde */
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+a button:hover {
+  background-color: #45a049; /* Mejorado: Hover más oscuro */
+  transform: translateY(-2px);
+}
+
+/* Media Queries para Responsive */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .div-2 {
+    margin-top: 80px;
+    max-width: 90%;
+  }
+
+  .div-2 .inp1,
+  .div-2 .inp2 {
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  a button {
+    max-width: 250px;
+    height: 40px;
+    font-size: medium;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  header {
+    padding: 0.5rem;
+  }
+
+  .div-2 {
+    margin-top: 50px;
+    padding: 0 0.5rem;
+  }
+
+  .login {
+    font-size: 1.5rem;
+    margin: 20px 0;
+  }
+
+  .div-2 .inp1,
+  .div-2 .inp2 {
+    height: 35px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: small;
+    margin-top: 15px;
+  }
+
+  a button {
+    max-width: 200px;
+    height: 35px;
+    font-size: medium;
+  }
