@@ -35,24 +35,12 @@ function renderProducts(productList) {
         <h3>${prod.title}</h3>
         <p>${prod.category}</p>
         <p><strong>$${prod.price.toFixed(2)}</strong></p>
-        <button onclick="addToCart(${prod.id})">Agregar al carrito</button>
+        <button onclick="addToCart(${prod.id})">Agregar a favoritos</button>
         
       `;
       productsContainer.appendChild(card);
     });
   }
-
-  // Render categorías
-function loadCategories() {
-    const categories = [...new Set(products.map(p => p.category))];
-    categories.forEach(cat => {
-      const option = document.createElement("option");
-      option.value = cat;
-      option.textContent = cat;
-      filterCategory.appendChild(option);
-    });
-  }
-
   // Carrito
 function addToCart(id) {
     const item = products.find(p => p.id === id);
@@ -98,50 +86,9 @@ function addToCart(id) {
     localStorage.setItem("cart", JSON.stringify(cart));
     renderCart();
   }
-  // Filtros y búsqueda
-searchInput.addEventListener("input", () => {
-  filterAndSort();
-});
+  
 
-filterCategory.addEventListener("change", () => {
-  filterAndSort();
-});
-
-sortProducts.addEventListener("change", () => {
-  filterAndSort();
-});
-
-function filterAndSort() {
-  let filtered = [...products];
-
-
-   // Buscar
-   const search = searchInput.value.toLowerCase();
-   if (search) {
-     filtered = filtered.filter(p =>
-       p.title.toLowerCase().includes(search) ||
-       p.description.toLowerCase().includes(search)
-     );
-   }
-
-   // Filtro categoría
-  if (filterCategory.value) {
-    filtered = filtered.filter(p => p.category === filterCategory.value);
-  }
-
-   // Orden
-   if (sortProducts.value === "priceAsc") {
-    filtered.sort((a, b) => a.price - b.price);
-  } else if (sortProducts.value === "priceDesc") {
-    filtered.sort((a, b) => b.price - a.price);
-  } else if (sortProducts.value === "nameAsc") {
-    filtered.sort((a, b) => a.title.localeCompare(b.title));
-  } else if (sortProducts.value === "nameDesc") {
-    filtered.sort((a, b) => b.title.localeCompare(a.title));
-  }
-
-  renderProducts(filtered);
-}
+    
 
 // Inicializar
 fetchProducts();
