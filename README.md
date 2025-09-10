@@ -16,3 +16,6 @@ _Agregar aquí imágenes de la app funcionando._
 ## Ejecución
 1. Clona el repositorio.
 2. Abre `index.html` en tu navegador.
+
+## Repositorio de notas 
+https://github.com/Dxnxxl06/JavaScrip.git
